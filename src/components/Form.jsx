@@ -12,10 +12,11 @@ const Form = ({ formData, updateField, submitForm }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     submitForm(formData);
+    console.log(formData);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="">
       <input
         type="text"
         name="name"
@@ -28,11 +29,7 @@ const Form = ({ formData, updateField, submitForm }) => {
         value={formData.email}
         onChange={handleChange}
       />
-      <textarea
-        name="message"
-        value={formData.message}
-        onChange={handleChange}
-      ></textarea>
+
       <button type="submit">Submit</button>
     </form>
   );
